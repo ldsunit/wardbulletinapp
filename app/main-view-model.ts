@@ -1,39 +1,15 @@
 import { Observable } from "tns-core-modules/data/observable";
+import { ObservableProperty } from "~/shared/observable-decorator";
 
-export class HelloWorldModel extends Observable {
+export class MainViewModel extends Observable {
+  @ObservableProperty() public webPageLoaded: boolean;
 
-    private _counter: number;
-    private _message: string;
+  public src: string;
 
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        // Initialize default values.
-        this._counter = 42;
-        this.updateMessage();
-    }
-
-    get message(): string {
-        return this._message;
-    }
-    
-    set message(value: string) {
-        if (this._message !== value) {
-            this._message = value;
-            this.notifyPropertyChange("message", value)
-        }
-    }
-
-    public onTap() {
-        this._counter--;
-        this.updateMessage();
-    }
-
-    private updateMessage() {
-        if (this._counter <= 0) {
-            this.message = "Hoorraaay! You unlocked the NativeScript clicker achievement!";
-        } else {
-            this.message = `${this._counter} taps left`;
-        }
-    }
+    this.src = "http://wardbulletin.com";
+    this.webPageLoaded = false;
+  }
 }

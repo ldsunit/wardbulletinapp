@@ -1,18 +1,23 @@
 {
 	"nativePlatformStatus": "3",
 	"appFilesHashes": {
-		"/Users/steven/mobile/Ward Bulletin/app/app-root.xml": "900a386cb2d8abc9573413eb3aff45448dcd3608",
-		"/Users/steven/mobile/Ward Bulletin/app/app.css": "6b35cf7fc669764bd611ef9fe3164457246cfaed",
-		"/Users/steven/mobile/Ward Bulletin/app/app.ts": "d2aee20ec12265aac675d8f866c60b7d03ec5bb6",
-		"/Users/steven/mobile/Ward Bulletin/app/main-page.ts": "07dbf12d1643feb07948ecaa3e4e4ec8febf1cd9",
-		"/Users/steven/mobile/Ward Bulletin/app/main-page.xml": "b0bee0004c8224a6bbf2a46b3bd5bb9b7fad11ff",
-		"/Users/steven/mobile/Ward Bulletin/app/main-view-model.ts": "b34974bc2be511015c5570aa3a8ad2a85153b984",
-		"/Users/steven/mobile/Ward Bulletin/app/package.json": "554a1e7b09cfa1663c75683765118999cb11411a"
+		"/Users/steven/mobile/Ward Bulletin/app/app-root.xml": "c4516777bcce0c2691d74c502c49ae81acff3db6",
+		"/Users/steven/mobile/Ward Bulletin/app/app.css": "9ea12cd6997cb9deb3c6850a0fe189b9f3352b6e",
+		"/Users/steven/mobile/Ward Bulletin/app/app.js": "81b0996a7705bbf5255f93a869f1030070f1e848",
+		"/Users/steven/mobile/Ward Bulletin/app/app.ts": "63506a55825ded4c1b67bf51f51e064f59608355",
+		"/Users/steven/mobile/Ward Bulletin/app/main-page.js": "c33e5dd9c47678a7f3bc1f47a4855f334145727c",
+		"/Users/steven/mobile/Ward Bulletin/app/main-page.ts": "c498072ce5c1ee327621d93a33c7fa50597fc691",
+		"/Users/steven/mobile/Ward Bulletin/app/main-page.xml": "327e016e1c1fa6b34295d84c78e0bfed5844009c",
+		"/Users/steven/mobile/Ward Bulletin/app/main-view-model.js": "a4e10f9e94180c3e2236cffc8a3ef29f90ece526",
+		"/Users/steven/mobile/Ward Bulletin/app/main-view-model.ts": "47c93a9c6d2882db284ee57d036f8ce5d78a6183",
+		"/Users/steven/mobile/Ward Bulletin/app/package.json": "554a1e7b09cfa1663c75683765118999cb11411a",
+		"/Users/steven/mobile/Ward Bulletin/app/shared/observable-decorator.js": "e65307e70e5819cc51e074884969a8a299c0c6ad",
+		"/Users/steven/mobile/Ward Bulletin/app/shared/observable-decorator.ts": "5948baa464fafaae41f3aa5857481bb5a857ceb8"
 	},
 	"release": false,
 	"bundle": true,
 	"changesRequireBuild": true,
-	"time": "Sun Dec 30 2018 20:40:16 GMT-0500 (Eastern Standard Time)",
-	"changesRequireBuildTime": "Sun Dec 30 2018 20:40:16 GMT-0500 (Eastern Standard Time)",
-	"projectFileHash": "40f77bc63466510f617285fa0433a905b8d606803f1c6810bc59fff0ae142dad"
+	"time": "Mon Dec 31 2018 10:36:37 GMT-0500 (Eastern Standard Time)",
+	"changesRequireBuildTime": "Mon Dec 31 2018 10:36:37 GMT-0500 (Eastern Standard Time)",
+	"projectFileHash": "32d3c65d8cacd6962f6e2d8d2e030735a0e99579a5cd146653533102bf5117db"
 }

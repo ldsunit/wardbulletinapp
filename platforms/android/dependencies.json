@@ -1,5 +1,9 @@
 [
     {
+        "name": "nativescript-statusbar",
+        "directory": "../../node_modules/nativescript-statusbar"
+    },
+    {
         "name": "nativescript-theme-core",
         "directory": "../../node_modules/nativescript-theme-core"
     },

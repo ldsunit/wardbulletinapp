@@ -186,6 +186,7 @@ webpackContext.id = "./ sync ^\\.\\/app\\.(css|scss|less|sass)$";
 
 var map = {
 	"./app-root.xml": "./app-root.xml",
+	"./main-page.js": "./main-page.js",
 	"./main-page.ts": "./main-page.ts",
 	"./main-page.xml": "./main-page.xml"
 };
@@ -217,7 +218,7 @@ webpackContext.id = "./ sync recursive (root|page)\\.(xml|css|js|ts|scss)$";
 /***/ (function(module, exports, __webpack_require__) {
 
 
-module.exports = "<Frame defaultPage=\"main-page\">\n</Frame>\n";
+module.exports = "<Frame defaultPage=\"main-page\" class=\"frame\" />\n";
     if (false) {}
 
 
@@ -228,10 +229,10 @@ module.exports = "<Frame defaultPage=\"main-page\">\n</Frame>\n";
 
 exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.i(__webpack_require__("../node_modules/css-loader/index.js?!../node_modules/nativescript-theme-core/css/core.light.css"), "");
+
 
 // module
-exports.push([module.i, "/*\nIn NativeScript, the app.css file is where you place CSS rules that\nyou would like to apply to your entire application. Check out\nhttp://docs.nativescript.org/ui/styling for a full list of the CSS\nselectors and properties you can use to style UI components.\n\n/*\nIn many cases you may want to use the NativeScript core theme instead\nof writing your own CSS rules. For a full list of class names in the theme\nrefer to http://docs.nativescript.org/ui/theme. \nThe imported CSS rules must precede all other types of rules.\n*/\n\n/*\nThe following CSS rule changes the font size of all UI\ncomponents that have the btn class name.\n*/\n.btn {\n    font-size: 18;\n}\n", ""]);
+exports.push([module.i, "#launch-screen {\n  background-color: #FFFFFF;\n  vertical-align: center;\n  horizontal-align: center;\n}\n", ""]);
 
 // exports
 ;
@@ -264,17 +265,9 @@ __webpack_require__("../node_modules/tns-core-modules/ui/frame/activity.js");
             global.registerWebpackModules(context);
             
         __webpack_require__("../node_modules/tns-core-modules/bundle-entry-points.js");
-        /*
-In NativeScript, the app.ts file is the entry point to your application.
-You can use this file to perform app-level initialization, but the primary
-purpose of the file is to pass control to the app’s first module.
-*/
-
+        
 tns_core_modules_application__WEBPACK_IMPORTED_MODULE_0__["run"]({ moduleName: "app-root" });
-/*
-Do not place any code after the application has been started as it will not
-be executed on iOS.
-*/
+// do not put anything after application.run
 
     
         
@@ -284,38 +277,71 @@ be executed on iOS.
 
 /***/ }),
 
+/***/ "./main-page.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var main_view_model_1 = __webpack_require__("./main-view-model.ts");
+var web_view_1 = __webpack_require__("../node_modules/tns-core-modules/ui/web-view/web-view.js");
+function navigatingTo(args) {
+    var page = args.object;
+    page.backgroundSpanUnderStatusBar = true;
+    page.bindingContext = new main_view_model_1.MainViewModel();
+}
+exports.navigatingTo = navigatingTo;
+function onWebViewLoaded(args) {
+    var webview = args.object;
+    var page = args.object.page;
+    var vm = page.bindingContext;
+    // handle WebView load finish event
+    webview.on(web_view_1.WebView.loadFinishedEvent, function (args) {
+        if (!args.error) {
+            webview.height = "auto";
+            vm.set('webPageLoaded', true);
+        }
+        else {
+            alert("Sorry, we're having issues connecting");
+        }
+    });
+}
+exports.onWebViewLoaded = onWebViewLoaded;
+
+
+/***/ }),
+
 /***/ "./main-page.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navigatingTo", function() { return navigatingTo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onWebViewLoaded", function() { return onWebViewLoaded; });
 /* harmony import */ var _main_view_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./main-view-model.ts");
-/*
-In NativeScript, a file with the same name as an XML file is known as
-a code-behind file. The code-behind is a great place to place your view
-logic, and to set up your page’s data binding.
-*/
+/* harmony import */ var tns_core_modules_ui_web_view__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../node_modules/tns-core-modules/ui/web-view/web-view.js");
+/* harmony import */ var tns_core_modules_ui_web_view__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(tns_core_modules_ui_web_view__WEBPACK_IMPORTED_MODULE_1__);
 
-// Event handler for Page "navigatingTo" event attached in main-page.xml
+
 function navigatingTo(args) {
-    /*
-    This gets a reference this page’s <Page> UI component. You can
-    view the API reference of the Page to see what’s available at
-    https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
-    */
     var page = args.object;
-    /*
-    A page’s bindingContext is an object that should be used to perform
-    data binding between XML markup and TypeScript code. Properties
-    on the bindingContext can be accessed using the {{ }} syntax in XML.
-    In this example, the {{ message }} and {{ onTap }} bindings are resolved
-    against the object returned by createViewModel().
-
-    You can learn more about data binding in NativeScript at
-    https://docs.nativescript.org/core-concepts/data-binding.
-    */
-    page.bindingContext = new _main_view_model__WEBPACK_IMPORTED_MODULE_0__["HelloWorldModel"]();
+    page.backgroundSpanUnderStatusBar = true;
+    page.bindingContext = new _main_view_model__WEBPACK_IMPORTED_MODULE_0__["MainViewModel"]();
+}
+function onWebViewLoaded(args) {
+    var webview = args.object;
+    var page = args.object.page;
+    var vm = page.bindingContext;
+    // handle WebView load finish event
+    webview.on(tns_core_modules_ui_web_view__WEBPACK_IMPORTED_MODULE_1__["WebView"].loadFinishedEvent, function (args) {
+        if (!args.error) {
+            webview.height = "auto";
+            vm.set('webPageLoaded', true);
+        }
+        else {
+            alert("Sorry, we're having issues connecting");
+        }
+    });
 }
 ;
     if (false) {}
@@ -326,10 +352,11 @@ function navigatingTo(args) {
 /***/ "./main-page.xml":
 /***/ (function(module, exports, __webpack_require__) {
 
-
-module.exports = "<!--\nThe markup in NativeScript apps contains a series of user interface components, each\nof which NativeScript renders with a platform-specific iOS or Android native control.\nYou can find a full list of user interface components you can use in your app at\nhttps://docs.nativescript.org/ui/components.\n-->\n<Page xmlns=\"http://schemas.nativescript.org/tns.xsd\" navigatingTo=\"navigatingTo\" class=\"page\">\n    <!--\n    The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.\n    http://docs.nativescript.org/ui/action-bar\n    -->\n    <Page.actionBar>\n        <ActionBar title=\"My App\" icon=\"\" class=\"action-bar\">\n        </ActionBar>\n    </Page.actionBar>\n    <!--\n    The StackLayout stacks UI components on the screen—either vertically or horizontally.\n    In this case, the StackLayout does vertical stacking; you can change the stacking to\n    horizontal by applying a orientation=\"horizontal\" attribute to the <StackLayout> element.\n    You can learn more about NativeScript layouts at\n    https://docs.nativescript.org/ui/layout-containers.\n\n    These components make use of several CSS class names that are part of the NativeScript\n    core theme, such as p-20, btn, h2, and text-center. You can view a full list of the\n    class names available for styling your app at https://docs.nativescript.org/ui/theme.\n    -->\n    <StackLayout class=\"p-20\">\n        <Label text=\"Tap the button\" class=\"h1 text-center\"/>\n        <Button text=\"TAP\" tap=\"{{ onTap }}\" class=\"btn btn-primary btn-active\"/>\n        <Label text=\"{{ message }}\" class=\"h2 text-center\" textWrap=\"true\"/>\n    </StackLayout>\n</Page>\n";
+/* WEBPACK VAR INJECTION */(function(global) {global.registerModule("nativescript-statusbar", function() { return __webpack_require__("../node_modules/nativescript-statusbar/statusbar.js"); });global.registerModule("nativescript-statusbar/StatusBar", function() { return __webpack_require__("../node_modules/nativescript-statusbar/statusbar.js"); });global.registerModule("nativescript-statusbar", function() { return __webpack_require__("../node_modules/nativescript-statusbar/statusbar.js"); });global.registerModule("nativescript-statusbar/StatusBar", function() { return __webpack_require__("../node_modules/nativescript-statusbar/statusbar.js"); });
+module.exports = "<Page xmlns=\"http://schemas.nativescript.org/tns.xsd\" loaded=\"onPageLoad\" navigatingTo=\"navigatingTo\" class=\"page\" actionBarHidden=\"true\" xmlns:x=\"nativescript-statusbar\">\n  <x:StatusBar ios:barStyle=\"light\" barColor=\"#222222\" />\n\n  <StackLayout backgroundColor>\n    <GridLayout rows=\"*\" columns=\"*\">\n      <GridLayout row=\"0\" col=\"0\" rows=\"*\" columns=\"*\" id=\"launch-screen\">\n\n      </GridLayout>\n\n      <WebView row=\"0\" col=\"0\" src=\"{{ src }}\" loaded=\"onWebViewLoaded\" id=\"main-web-view\" visibility=\"{{ webPageLoaded ? 'visible' : 'collapsed' }}\" />\n    </GridLayout>\n  </StackLayout>\n</Page>\n";
     if (false) {}
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__("../node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -338,45 +365,25 @@ module.exports = "<!--\nThe markup in NativeScript apps contains a series of use
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HelloWorldModel", function() { return HelloWorldModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainViewModel", function() { return MainViewModel; });
 /* harmony import */ var tns_core_modules_data_observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/tns-core-modules/data/observable/observable.js");
 /* harmony import */ var tns_core_modules_data_observable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tns_core_modules_data_observable__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _shared_observable_decorator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./shared/observable-decorator.ts");
 
-var HelloWorldModel = /** @class */ (function (_super) {
-    __extends(HelloWorldModel, _super);
-    function HelloWorldModel() {
+
+var MainViewModel = /** @class */ (function (_super) {
+    __extends(MainViewModel, _super);
+    function MainViewModel() {
         var _this = _super.call(this) || this;
-        // Initialize default values.
-        _this._counter = 42;
-        _this.updateMessage();
+        _this.src = "http://wardbulletin.com";
+        _this.webPageLoaded = false;
         return _this;
     }
-    Object.defineProperty(HelloWorldModel.prototype, "message", {
-        get: function () {
-            return this._message;
-        },
-        set: function (value) {
-            if (this._message !== value) {
-                this._message = value;
-                this.notifyPropertyChange("message", value);
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    HelloWorldModel.prototype.onTap = function () {
-        this._counter--;
-        this.updateMessage();
-    };
-    HelloWorldModel.prototype.updateMessage = function () {
-        if (this._counter <= 0) {
-            this.message = "Hoorraaay! You unlocked the NativeScript clicker achievement!";
-        }
-        else {
-            this.message = this._counter + " taps left";
-        }
-    };
-    return HelloWorldModel;
+    __decorate([
+        Object(_shared_observable_decorator__WEBPACK_IMPORTED_MODULE_1__["ObservableProperty"])(),
+        __metadata("design:type", Boolean)
+    ], MainViewModel.prototype, "webPageLoaded", void 0);
+    return MainViewModel;
 }(tns_core_modules_data_observable__WEBPACK_IMPORTED_MODULE_0__["Observable"]));
 
 
@@ -387,6 +394,41 @@ var HelloWorldModel = /** @class */ (function (_super) {
 /***/ (function(module) {
 
 module.exports = {"main":"app.js","android":{"v8Flags":"--expose_gc"}};
+
+/***/ }),
+
+/***/ "./shared/observable-decorator.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ObservableProperty", function() { return ObservableProperty; });
+/* harmony import */ var data_observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/tns-core-modules/data/observable/observable.js");
+/* harmony import */ var data_observable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(data_observable__WEBPACK_IMPORTED_MODULE_0__);
+
+function ObservableProperty() {
+    return function (obj, key) {
+        var storedValue = obj[key];
+        Object.defineProperty(obj, key, {
+            enumerable: true,
+            configurable: true,
+            get: function () { return storedValue; },
+            set: function (value) {
+                if (storedValue === value) {
+                    return;
+                }
+                storedValue = value;
+                this.notify({
+                    eventName: data_observable__WEBPACK_IMPORTED_MODULE_0__["Observable"].propertyChangeEvent,
+                    propertyName: key,
+                    object: this,
+                    value: value,
+                });
+            }
+        });
+    };
+}
+
 
 /***/ })
 

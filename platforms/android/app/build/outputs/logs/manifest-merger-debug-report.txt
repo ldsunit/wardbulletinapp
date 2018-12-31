@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-43:12
-INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-43:12
-INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-43:12
-INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-43:12
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-45:12
 MERGED from [com.android.support:multidex:1.0.2] /Users/steven/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/88a850fd7fa31331dc109b02a33fc586/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:28.0.0] /Users/steven/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/80016e02b75acc2d6dbedffdbff7ec23/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:28.0.0] /Users/steven/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1fef2e8ce87c10b1528cdf5a314ec88/AndroidManifest.xml:17:1-24:12
@@ -39,11 +39,11 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/steven/.gradle/cache
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/steven/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/cade712c6e4201cae5c9280803d836c0/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/steven/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/f73f165d3dce7ef38e4e6f2d24fe3b54/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /Users/steven/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/44c57d98c9cbac699c9150309ecf417c/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-43:12
-INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-43:12
-INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:2:1-45:12
 	package
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:3:2-41
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:3:2-40
 		INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -162,8 +162,12 @@ uses-permission#android.permission.INTERNET
 ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:19:2-63
 	android:name
 		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:19:19-61
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:20:3-77
+	android:name
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:20:20-74
 application
-ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:21:2-42:16
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:22:2-44:16
 MERGED from [com.android.support:design:28.0.0] /Users/steven/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1fef2e8ce87c10b1528cdf5a314ec88/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /Users/steven/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1fef2e8ce87c10b1528cdf5a314ec88/AndroidManifest.xml:22:5-20
 MERGED from [:widgets-release:] /Users/steven/.gradle/caches/transforms-1/files-1.1/widgets-release.aar/75f30ee3a0bba395306378805161f721/AndroidManifest.xml:11:5-12:19
@@ -175,42 +179,44 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/steven/.grad
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /Users/steven/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/db4399305ee1a686b45447e3310de68b/AndroidManifest.xml:22:18-91
 	android:label
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:25:3-35
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:26:3-35
 	android:icon
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:24:3-32
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:25:3-32
 	android:allowBackup
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:23:3-29
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:24:3-29
 	android:theme
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:26:3-34
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:28:3-34
+	android:usesCleartextTraffic
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:27:5-40
 	android:name
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:22:3-49
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:23:3-49
 activity#com.tns.NativeScriptActivity
-ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:28:3-40:14
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:30:3-42:14
 	android:label
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:30:4-49
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:32:4-49
 	android:configChanges
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:31:4-65
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:33:4-65
 	android:theme
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:32:4-44
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:34:4-44
 	android:name
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:29:4-47
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:31:4-47
 meta-data#SET_THEME_ON_LAUNCH
-ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:34:4-87
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:36:4-87
 	android:resource
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:34:50-84
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:36:50-84
 	android:name
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:34:15-49
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:36:15-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:36:4-39:20
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:38:4-41:20
 action#android.intent.action.MAIN
-ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:37:5-57
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:39:5-57
 	android:name
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:37:13-54
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:39:13-54
 category#android.intent.category.LAUNCHER
-ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:38:5-65
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:40:5-65
 	android:name
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:38:15-62
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:40:15-62
 activity#com.tns.ErrorReportActivity
-ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:41:3-57
+ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:43:3-57
 	android:name
-		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:41:13-55
+		ADDED from /Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/AndroidManifest.xml:43:13-55
