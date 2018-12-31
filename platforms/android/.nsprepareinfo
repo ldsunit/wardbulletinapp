@@ -1,0 +1,18 @@
+{
+	"nativePlatformStatus": "3",
+	"appFilesHashes": {
+		"/Users/steven/mobile/Ward Bulletin/app/app-root.xml": "900a386cb2d8abc9573413eb3aff45448dcd3608",
+		"/Users/steven/mobile/Ward Bulletin/app/app.css": "6b35cf7fc669764bd611ef9fe3164457246cfaed",
+		"/Users/steven/mobile/Ward Bulletin/app/app.ts": "d2aee20ec12265aac675d8f866c60b7d03ec5bb6",
+		"/Users/steven/mobile/Ward Bulletin/app/main-page.ts": "07dbf12d1643feb07948ecaa3e4e4ec8febf1cd9",
+		"/Users/steven/mobile/Ward Bulletin/app/main-page.xml": "b0bee0004c8224a6bbf2a46b3bd5bb9b7fad11ff",
+		"/Users/steven/mobile/Ward Bulletin/app/main-view-model.ts": "b34974bc2be511015c5570aa3a8ad2a85153b984",
+		"/Users/steven/mobile/Ward Bulletin/app/package.json": "554a1e7b09cfa1663c75683765118999cb11411a"
+	},
+	"release": false,
+	"bundle": true,
+	"changesRequireBuild": true,
+	"time": "Sun Dec 30 2018 20:40:16 GMT-0500 (Eastern Standard Time)",
+	"changesRequireBuildTime": "Sun Dec 30 2018 20:40:16 GMT-0500 (Eastern Standard Time)",
+	"projectFileHash": "40f77bc63466510f617285fa0433a905b8d606803f1c6810bc59fff0ae142dad"
+}

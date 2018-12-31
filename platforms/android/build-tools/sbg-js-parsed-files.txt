@@ -1,0 +1,4 @@
+/Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/assets/app/bundle.js
+/Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/assets/app/vendor.js
+/Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/assets/app/starter.js
+/Users/steven/mobile/Ward Bulletin/platforms/android/app/src/main/assets/app/tns-java-classes.js
